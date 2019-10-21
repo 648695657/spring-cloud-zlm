@@ -1,0 +1,88 @@
+#基础使用方式
+#server:
+#  port: 8080
+#spring:
+#  application:
+#    name: config-server
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://gitee.com/zhanglimin01/spring-cloud-zlm-config-repo
+
+#Git URI中的占位符
+#server:
+#  port: 8080
+#spring:
+#  application:
+#    name: config-server
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://gitee.com/zhanglimin01/{application}
+
+#模式匹配和多个存储库
+#server:
+#  port: 8080
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://gitee.com/zhanglimin01/spring-cloud-zlm-config
+#          repos:
+#            simple: https://gitee.com/zhanglimin01/spring-cloud-zlm-config-simple
+#            special:
+#              pattern: special*/dev*,special*/test*
+#              uri: https://gitee.com/zhanglimin01/spring-cloud-zlm-config-special
+
+#子目录查找配置
+#server:
+#  port: 8080
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://gitee.com/zhanglimin01/spring-cloud-zlm-config
+#          search-paths:
+#            - foo #路径
+#            - bar #路径
+#          clone-on-start: true #启动时加载所有配置信息
+
+##账号密码
+#server:
+#  port: 8080
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://gitee.com/zhanglimin01/spring-cloud-zlm-config
+#          search-paths:
+#            - foo #路径
+#            - bar #路径
+#          clone-on-start: true #启动时加载所有配置信息
+#          username: username #配置账号
+#          password: strongpassword #配置密码
+
+#账号密码
+server:
+  port: 8080
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/zhanglimin01/spring-cloud-zlm-config
+          search-paths:
+            - foo #路径
+            - bar #路径
+          clone-on-start: true #启动时加载所有配置信息
+  security:
+    user:
+      name: user
+      password: 123
+encrypt:
+  key: foo
